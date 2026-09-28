@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int age,status,ticket_price=500;
+
+    printf("Enter your age: ");
+    scanf("%d",&age);
+
+    printf("Are you a student? (1 for Yes, 0 for No): ");
+    scanf("%d",&status);
+
+    if(age < 18)
+    {
+        printf("Ticket is free for minors. Enjoy the concert!");
+    }
+
+    else if(age >= 18)
+    {
+        if(status == 1)
+        {
+           ticket_price = (ticket_price * 50) / 100;
+           printf("Student ticket price: %d TL",ticket_price);
+        }
+
+        else if(status == 0)
+        {
+            printf("Regular ticket price: %d TL",ticket_price);
+        }
+    }
+    return 0;
+}
